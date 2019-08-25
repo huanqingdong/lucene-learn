@@ -1,5 +1,6 @@
 package app.uitl;
 
+import app.ik.IKAnalyzer;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -11,6 +12,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
  */
 public class AnalyzerUtil {
 
+    private static Analyzer ikAnalyzer;
 
     public static void analyzeStr(Analyzer analyzer, String analyzerType, String content) {
         try {
@@ -31,6 +33,22 @@ public class AnalyzerUtil {
         } catch (Exception e) {
             System.out.println("分词异常" + e.getMessage());
         }
+    }
+
+    /**
+     * 获取ikAnalyzer
+     *
+     * 通过DCL(double-checked locking)实现单例
+     */
+    public static Analyzer getIkAnalyzer() {
+        if (ikAnalyzer == null) {
+            synchronized (AnalyzerUtil.class) {
+                if (ikAnalyzer == null) {
+                    ikAnalyzer = new IKAnalyzer();
+                }
+            }
+        }
+        return ikAnalyzer;
     }
 
 }
