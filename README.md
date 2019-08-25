@@ -10,6 +10,11 @@
 实现lucene版的IK分词器
 
 
+### app.index
+
+Lucene中文档的增加,删除,修改操作
+
+
 ### app.util
 
 
