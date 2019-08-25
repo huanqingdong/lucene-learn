@@ -12,7 +12,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
  */
 public class AnalyzerUtil {
 
-    private static Analyzer ikAnalyzer;
+    private static volatile Analyzer ikAnalyzer;
 
     public static void analyzeStr(Analyzer analyzer, String analyzerType, String content) {
         try {

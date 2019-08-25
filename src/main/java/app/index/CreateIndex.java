@@ -48,7 +48,7 @@ public class CreateIndex extends BaseIndex{
 
         News news2 = new News();
         news2.setId(2);
-        news2.setTitle("北大迎4380名新生 农村学生700多人今年最多1");
+        news2.setTitle("北大迎4380名新生 农村学生700多人近年最多");
         news2.setContent("昨天,北京大学迎来4370名来自全国各地及数十个国家的本科新生.其中," +
                 "农村学生工700余名,为近年最多...");
         news2.setReply(995);
