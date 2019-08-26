@@ -31,6 +31,9 @@ public class BaseIndex {
         titleType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS);
         titleType.setStored(true);
         titleType.setTokenized(true);
+        titleType.setStoreTermVectors(true);
+        titleType.setStoreTermVectorPositions(true);
+        titleType.setStoreTermVectorOffsets(true);
         // 内容字段
         contentType = new FieldType();
         contentType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS);
